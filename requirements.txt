@@ -1,2 +1,1 @@
-#test
 Django==1.8
