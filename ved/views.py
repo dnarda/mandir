@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the Ved index.")
 
 # Create your views here.
+def index(request):
+    context = {}
+    #return HttpResponse("Hello")
+    return render(request, 'ved/index.html', context)
+
