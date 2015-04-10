@@ -7,13 +7,15 @@
         <title>Welcome to Ved Mandir</title>
     {% endblock %}
 
+    <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
+    <script src="{% static "js/jquery-1.11.2.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
 
 
 
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
-    <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
 	<link rel="stylesheet" href="{% static "css/prettyPhoto.css" %}">
 	<link rel="stylesheet" href="{% static "css/flexslider.css" %}">
 	<link rel="stylesheet" href="{% static "css/font-awesome.css" %}">
