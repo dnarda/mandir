@@ -46,53 +46,46 @@
 
 <body>
 
-<div class="header row">
-	<div class="navbar navbar-default">
-	  <div class="navbar-inner">
-		<div class="navbar-header">
-		  <a class="navbar-brand" href="#"><img alt="Brand" src="{% static "img/logo.png" %}"></a>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-	<!--	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
-		<div class="container"> 
-		  <ul class="nav navbar-nav pull-right" >
-			<li class="active"><a href="#"><i class="icon-home"></i><br/>Home<span class="sr-only">(current)</span></a></li>
-			<li><a href="#"><i class="icon-camera"></i><br/>Darshan</a></li>
-			<li><a href="#"><i class="icon-camera"></i><br/>Photos</a></li>
-			<li><a href="#"><i class="icon-comments"></i><br/>Volunteers</a></li>
-			<li><a href="#"><i class="icon-book"></i><br />Temple Hall <br /> Availability</a></li>
-			<li><a href="#"><i class="icon-envelope-alt"></i><br/>Contact</a></li>
-			<li><a href="#"><i class="icon-user"></i><br/>About</a></li>
-		  </ul>
-		</div><!-- /.container -->
-	  </div><!-- /.container-inner -->
-	</div>
-</div>
-
 	<div class="container">
+		 <div class="header"> 
+			<div class="span12">
+				<div class="navbar navbar-default">
+				  <div class="navbar-inner">
+					<div class="navbar-header">
+					  <a class="navbar-brand" href="#"><img alt="Brand" src="{% static "img/logo.png" %}"></a>
+					</div>
+					<ul class="nav navbar-nav pull-right" >
+						<li class="active"><a href="#"><i class="icon-home"></i><br/>Home<span class="sr-only">(current)</span></a></li>
+						<li><a href="#"><i class="icon-camera"></i><br/>Darshan</a></li>
+						<li><a href="#"><i class="icon-camera"></i><br/>Photos</a></li>
+						<li><a href="#"><i class="icon-comments"></i><br/>Volunteers</a></li>
+						<li><a href="#"><i class="icon-book"></i><br />Temple Hall <br /> Availability</a></li>
+						<li><a href="#"><i class="icon-envelope-alt"></i><br/>Contact</a></li>
+						<li><a href="#"><i class="icon-user"></i><br/>About</a></li>
+					</ul>
+				  </div><!-- /.container-inner -->
+				</div>
+			</div>
+		</div>  <!--header row -->
+	</div>
+
     {% block content %}
 
 
     {% endblock %}
-	</div>
 
     <br><br>
-
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="copyright span4">
-                        <p>Copyright 2013 Ved Mandir. Template by <a href="http://azmind.com">Kunal</a>.</p>
-                    </div>
-                    <div class="social span8">
+                    <div class="copyright col-sm-4">Copyright 2013 Ved Mandir</div>
+                    <div class="social col-sm-8">
                         <a class="facebook" href="https://www.facebook.com/VedMandirNJ"></a>
                         <a class="twitter" href="https://www.twitter.com/VedMandirNJ"></a>
                     </div>
                     <br>
                 </div>
             </div>
-
         </footer>
     </div>
 </body>
