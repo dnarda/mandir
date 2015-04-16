@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block extra_styles %}
+<style type="text/css">
+*[class*="Image"]:after, [class*="image"]:after, *[class*="Photo"]:after, *[class*="photo"]:after {
+    pointer-events:none !important;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    {% load staticfiles %}
+
+
+	<div class="page-title">
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<i class="icon-tasks page-title-icon"></i>
+					<h2>  Whats Happening This Month?</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="team container">
+		<div class="row">
+			{% for event in events %}
+				<div class="team-text col-md-4 ">
+					<br>
+					<iframe src="/ved/date/{{ event.event_start  | date:'m' }}/{{ event.event_start  | date:'d' }}" height="140px" width="90px" scrolling="no" frameborder="no" alt=""></iframe>                    
+					<h4><b>{{ event.description }}</b></h4>
+					<p>&nbsp;</p>
+					<div class="social-links">
+						<a class="facebook" href="https://www.facebook.com/VedMandirNJ"></a>
+						<a class="email" href="mailto:username@example.com?subject=Event&body=message%20goes%20here"></a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="call-to-action container">
+		<div class="row">
+			<div class="call-to-action-text span12">
+				<div class="ca-text">
+					<p>Need more <span class="violet">information? </span> Want to learn more about what's happening? </p>
+				</div>
+				<div class="ca-button">
+					<a href="contact.html">Contact Us!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
