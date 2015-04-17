@@ -26,7 +26,7 @@
 	<div class="team container">
 		<div class="row">
 			{% for event in events %}
-				<div class="team-text col-md-4 ">
+				<div class="team-text span4 ">
 					<br>
 					<iframe src="/ved/date/{{ event.event_start  | date:'m' }}/{{ event.event_start  | date:'d' }}" height="140px" width="90px" scrolling="no" frameborder="no" alt=""></iframe>                    
 					<h4><b>{{ event.description }}</b></h4>
