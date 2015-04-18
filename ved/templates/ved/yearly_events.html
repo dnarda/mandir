@@ -36,21 +36,38 @@
 			</div>
 		</div>
 
-		<div class="team container">
+		<div class="portfolio portfolio-page container">
 			<div class="row">
-				{% for event in events %}
-					<div class="team-text span4 ">
-						<br>
-						<iframe src="/ved/date/{{ event.event_start  | date:'m' }}/{{ event.event_start  | date:'d' }}" height="140px" width="90px" scrolling="no" frameborder="no" alt=""></iframe>                    
-						<h4><b>{{ event.description }}</b></h4>
-						<p>{{ event.description1 | default_if_none:"&nbsp;" }}</p>
-						<p>{{ event.description2 | default_if_none:"&nbsp;" }}</p>
-						<div class="social-links">
-							<a class="facebook" href="https://www.facebook.com/VedMandirNJ"></a>
-							<a class="email" href="mailto:username@example.com?subject=Event&body=message%20goes%20here"></a>
+				<div class="portfolio-navigator span12">
+					<h4 class="filter-portfolio">
+						<a class="all" id="active-imgs" href="/ved/yearlyevents">All</a> /
+						<a class="January" id="" href="/ved/yearlyevents/01">Jan</a>/ 
+						<a class="February" id="" href="/ved/yearlyevents/02">Feb </a>/ 
+						<a class="March" id="" href="/ved/yearlyevents/03">Mar</a>/
+						<a class="April" id="" href="/ved/yearlyevents/04">Apr</a>/
+						<a class="May" id="" href="/ved/yearlyevents/05">May</a>/
+						<a class="June" id="" href="/ved/yearlyevents/06">Jun</a>/
+						<a class="July" id="" href="/ved/yearlyevents/07">Jul</a>/
+						<a class="August" id="" href="/ved/yearlyevents/08">Aug</a>/
+						<a class="September" id="" href="/ved/yearlyevents/09">Sep</a>/
+						<a class="October" id="" href="/ved/yearlyevents/10">Oct</a>/
+						<a class="November" id="" href="/ved/yearlyevents/11">Nov</a>/
+						<a class="December" id="" href="/ved/yearlyevents/12">Dec</a>
+
+					</h4>
+				</div>
+			</div>
+			<div class="row">
+				<ul class="portfolio-img">
+				{% for event in yearlyevents %}
+					<li data-id="p-{{ forloop.counter }}" data-type="{{ event.event_date | date:"F" }}" class="span3">
+						<div class="work">
+							<h4>{{ event.description }}</h4>
+							<p>{{ event.event_date | date:"M-d" }}</p>
 						</div>
-					</div>
+					</li>
 				{% endfor %}
+				<ul>
 			</div>
 		</div>
 
