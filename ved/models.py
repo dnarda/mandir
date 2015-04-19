@@ -14,3 +14,13 @@ class YearlyEvent(models.Model):
     description1 = models.CharField(max_length=200, null = True, blank = True)
     description2 = models.CharField(max_length=200, null = True, blank = True)
     event_date = models.DateTimeField('event start')
+
+class Darshan(models.Model):
+    image_name = models.CharField(max_length=200)
+    label = models.CharField(max_length=200, null = True, blank = True)
+    data_type = models.CharField(max_length=50, null = True, blank = True)
+    display_order = models.IntegerField(null = True)
+
+class Photos(models.Model):
+    image_name = models.CharField(max_length=200)
+    display_order = models.IntegerField(null = True)

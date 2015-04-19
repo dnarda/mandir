@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% load staticfiles %}
+
+
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <i class="icon-camera page-title-icon"></i>
+                    <h2>Virtual Darshan</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio -->
+    <div class="portfolio portfolio-page container">
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <ul class="portfolio-img">
+				{% for darshan in darshans %}
+					<li data-id="p-{{ forloop.counter }}" data-type="{{ darshan.data_type }}" class="span3">
+						<div class="work">
+							<a href="{% static "img/" %}{{ darshan.image_name }}" rel="prettyPhoto">
+								<img src="{% static "img/" %}{{ darshan.image_name }}" alt="">
+							</a>
+							<h4>{{ darshan.label }}</h4>
+						</div>
+					</li>
+				{% endfor %}
+             </ul>
+        </div>
+    </div>
+{% endblock %}

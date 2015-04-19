@@ -9,4 +9,7 @@ urlpatterns = [
     url(r'^/yearlyevents/(?P<pmonth>\d{2})/$', views.yearlyevents, name='yearlyevents'),
     url(r'^/yearlyevents/$', views.yearlyevents, name='yearlyevents'),
     url(r'^/date/(?P<pmonth>\d{2})/(?P<pday>\d{2})/$', views.datedisp, name='events'),
+    url(r'^/darshan/$', views.darshan, name='darshan'),
+    url(r'^/photos/$', views.photos, name='photos'),
+    url(r'^/demo_light_skin/$', views.demo_light_skin, name='demo_light_skin'),
 ]

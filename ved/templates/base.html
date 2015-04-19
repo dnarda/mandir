@@ -61,8 +61,8 @@
 					<ul class="nav navbar-nav pull-right" >
 						<li class="active"><a href="/"><i class="icon-home"></i><br/>Home<span class="sr-only"></span></a></li>
 						<li><a href="/ved/events"><i class="icon-tasks"></i><br/>Events</a></li>
-						<li><a href="#"><i class="icon-camera"></i><br/>Darshan</a></li>
-						<li><a href="#"><i class="icon-camera"></i><br/>Photos</a></li>
+						<li><a href="/ved/darshan"><i class="icon-camera"></i><br/>Darshan</a></li>
+						<li><a href="/ved/photos"><i class="icon-camera"></i><br/>Photos</a></li>
 						<li><a href="#"><i class="icon-comments"></i><br/>Volunteers</a></li>
 						<li><a href="#"><i class="icon-book"></i><br />Temple Hall <br /> Availability</a></li>
 						<li><a href="#"><i class="icon-envelope-alt"></i><br/>Contact</a></li>
@@ -78,19 +78,38 @@
 
     {% endblock %}
 
-    <br><br>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="copyright span4">Copyright 2013 Ved Mandir</div>
-                    <div class="social span8">
-                        <a class="facebook" href="https://www.facebook.com/VedMandirNJ"></a>
-                        <a class="twitter" href="https://www.twitter.com/VedMandirNJ"></a>
-                    </div>
-                    <br>
-                </div>
-            </div>
-        </footer>
-    </div>
+	<br><br>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="copyright span4">Copyright 2013 Ved Mandir</div>
+					<div class="social span8">
+						<a class="facebook" href="https://www.facebook.com/VedMandirNJ"></a>
+						<a class="twitter" href="https://www.twitter.com/VedMandirNJ"></a>
+					</div>
+					<br>
+				</div>
+			</div>
+		</footer>
+		<script src="{% static "js/jquery-1.8.2.min.js" %}"></script>
+		<script src="{% static "js/bootstrap.min.js" %}"></script>
+		<script src="{% static "js/jquery.flexslider.js" %}"></script>
+		<script src="{% static "js/jquery.tweet.js" %}"></script>
+		<script src="{% static "js/jflickrfeed.js" %}"></script>
+		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<script src="{% static "js/jquery.ui.map.min.js" %}"></script>
+		<script src="{% static "js/jquery.quicksand.js" %}"></script>
+		<script src="{% static "js/jquery.prettyPhoto.js" %}"></script>
+		<script src="{% static "js/scripts.js" %}"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-45152718-1', 'vedmandir.org');
+		  ga('send', 'pageview');
+		</script>
+	</div>
 </body>
 </html>

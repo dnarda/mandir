@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from models import Event, YearlyEvent
+from models import Event, YearlyEvent, Darshan, Photos
 from datetime import datetime,date,timedelta
 from dateutil.relativedelta import relativedelta
 from django.db.models import Q
@@ -36,16 +36,21 @@ def events(request, pmonth = None, pyear = None):
 
 def yearlyevents(request, pmonth = None):
     curr_year = datetime.now().year
-    
-    print "pmonth"
-    print pmonth
     if pmonth:
         events = YearlyEvent.objects.filter(event_date__year = curr_year,event_date__month = pmonth).order_by('event_date')
     else:
         events = YearlyEvent.objects.filter(event_date__year = curr_year).order_by('event_date')
         
-
-    print events
-
     return render(request, 'ved/yearly_events.html', {'yearlyevents':events})
 
+
+def darshan(request):
+    darshans = Darshan.objects.all().order_by('display_order')
+    return render(request, 'ved/darshan.html', {'darshans':darshans})
+
+def photos(request):
+    return render(request, 'ved/photos.html', {})
+
+def demo_light_skin(request):
+    photos = Photos.objects.all().order_by('display_order')
+    return render(request, 'ved/demo_light_skin.html', {'photos':photos})
