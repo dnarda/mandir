@@ -54,3 +54,16 @@ def photos(request):
 def demo_light_skin(request):
     photos = Photos.objects.all().order_by('display_order')
     return render(request, 'ved/demo_light_skin.html', {'photos':photos})
+
+def volunteer(request):
+    return render(request, 'ved/vol.html', {})
+
+def hall(request):
+    return render(request, 'ved/hall.html', {})
+
+def contact(request):
+    return render(request, 'ved/contact.html', {})
+
+def about(request):
+    return render(request, 'ved/about.html', {})
+

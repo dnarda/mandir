@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load staticfiles %}
+
+        <!-- Page Title -->
+        <div class="page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <i class="icon-user page-title-icon"></i>
+                        <h2>About Us</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us Text -->
+         <div class="about-us container">
+            <div class="row">
+                <div class="about-us-text span12">
+                    <h4>About Ved Mandir</h4>
+                    <p><b>Founder: Anantshrivibhushit Swami Shri Gangeshwaranandji Maharaj Udaseen</b>
+<br>
+The Ved Mandir offers communal and spiritual services to all of its members and guests. It hosts regularly scheduled and special programs every month. The facility is located just off Riva Drive in Milltown. <br> </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meet Our Team -->
+        <div class="team container">
+            <div class="team-title">
+                <h3>Meet Our Pujaris</h3>
+            </div>
+            <div class="row">
+                <a href="JavaScript:newPopup('pujaris.html');"><div class="team-text span3">
+                    <img src="{% static "img/team/1.png" %}" alt="">
+                    <h4>Shree Hari Kandel</h4>
+                    <p>About Me</p> </div>
+                </a>  
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

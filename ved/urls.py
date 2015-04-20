@@ -12,4 +12,8 @@ urlpatterns = [
     url(r'^/darshan/$', views.darshan, name='darshan'),
     url(r'^/photos/$', views.photos, name='photos'),
     url(r'^/demo_light_skin/$', views.demo_light_skin, name='demo_light_skin'),
+    url(r'^/volunteer/$', views.volunteer, name='volunteer'),
+    url(r'^/hall/$', views.hall, name='hall'),
+    url(r'^/contact/$', views.contact, name='contact'),
+    url(r'^/about/$', views.about, name='about'),
 ]

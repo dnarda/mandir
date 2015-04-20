@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load staticfiles %}
+        <!-- Page Title -->
+        <div class="page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <i class="icon-envelope-alt page-title-icon"></i>
+                        <h2>Contact Us /</h2>
+                        <p>732-821-0404</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="contact-us container">
+        	<h4>
+                        <a  href="contact.html" >Contact</a> /
+                        <a href="contactHall.html" style="color:black">Hall Bookings</a> /
+                        <a href="contactPriest.html" style="color:black">Priest Services</a> 
+
+            </h4>
+            <div class="row">
+                <div class="contact-form span7">
+                    <form method="post" action="assets/sendmail.php">
+                        <label for="name" class="nameLabel">Name</label>
+                          <input id="name" type="text" name="name" placeholder="Enter your name...">
+                        <label for="email" class="emailLabel">Email</label>
+                          <input id="email" type="text" name="email" placeholder="Enter your email...">
+                        <label for="subject">Subject</label>
+                          <input id="subject" type="text" name="subject" placeholder="Your subject...">
+                        <label for="message" class="messageLabel">Message</label>
+                          <textarea id="message" name="message" placeholder="Your message..."></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+                <div class="contact-address span5">
+                    
+                    <h4>Address</h4>
+                    <p>1 Ved Mandir Drive <br> Milltown, NJ, 08850</p>
+                    
+                    <h4>We Are Here</h4>
+                    <p>1. Travel on NJ Turnpike to Exit 9(New  Brunwsick & Route 18). <br>
+2. Take Route 18 North for 1 mile to Route 1 South. Travel 2.5  miles on 
+   Route 1 South. After Technology Center, take Milltown Exit which is 
+   after overpass.<br>
+3. Travel on Milltown Road (also known as Main Street) for about  1 mile. 
+   Go through the 1st traffic light and make 1st right on  Riva Avenue.<br>
+4. Travel on Riva Avenue for 0.7 mile. Go over a small bridge, pass a 
+   Farm Market on left side and then slow down. Just before the Food Mart
+   Store right, make a right turn on Ved Mandir drive.
+</p>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
