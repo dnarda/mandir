@@ -7,6 +7,7 @@ from django.shortcuts import render
 from forms import ContactForm, HallForm, PriestServiceForm
 from django.core.mail import send_mail
 from django.conf import settings
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -120,6 +121,16 @@ def contact(request):
     else:
         form = ContactForm()
         return render(request, 'ved/contact.html', {'form':form} )
+
+def avail(request):
+    return render(request, 'ved/avail.html', {})
+
+def donation(request):
+    with open('static/donation.pdf', 'r') as pdf:
+        response = HttpResponse(pdf.read(), content_type='application/pdf')
+        response['Content-Disposition'] = 'inline;filename=some_file.pdf'
+        return response
+    pdf.closed
 
 def about(request):
     return render(request, 'ved/about.html', {})
