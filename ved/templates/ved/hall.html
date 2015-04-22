@@ -2,44 +2,71 @@
 
 {% block content %}
     {% load staticfiles %}
-
+        <!-- Page Title -->
         <div class="page-title">
             <div class="container">
                 <div class="row">
                     <div class="span12">
-                        <i class="icon-user page-title-icon"></i>
-                        <h2>Temple Services</h2>
+                        <i class="icon-envelope-alt page-title-icon"></i>
+                        <h2>Contact Us /</h2>
+                        <p>732-821-0404</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- About Us Text -->
-        <div class="about-us container">
+        <!-- Contact Us -->
+        <div class="contact-us container">
+            <h4>
+            	<a  href="/ved/contact" >Contact</a> /
+                <a href="/ved/hall" style="color:black">Hall Bookings</a> /
+                <a href="/ved/priest" style="color:black">Priest Services</a> 
+            </h4>
             <div class="row">
-                <div class="about-us-text span12">
-                    <h4>Ved Mandir Pujari/Priest Services<a href="donation.pdf"> Click here for details</a></h4>
-                </div>
-            </div>
- <div class="call-to-action container">
-            <div class="row">
-                <div class="call-to-action-text span12">
-                    <div class="ca-text">
-                        <p>Need to book <span class="violet">the temple? </span>Call Ved Mandir at <span class="violet">732-821-0404</span> or Send us an <span class="violet">email!</span></p>
-                    </div>
-                    <div class="ca-button">
-                        <a href="contactHall.html">Contact Us!</a>
-                    </div>
-                </div>
-            </div>
-    	</div>
-		<div class="team-title">
-			<h3>Hall Availability</h3>
-		</div>
-		<!-- Services Half Width Text -->
-	   <div class="about-us container">
-<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=650&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=hgdesckovjb0bk36i2re3ceeog%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FNew_York" style=" border-width:0 " width="100%" height="650" frameborder="0" scrolling="no"></iframe>        </div>
-	</div>		   
+                <div class="contact-form span7">
+                    <form method="post" action="/ved/hall/">
 
+						<!--
+                        <label for="name" class="nameLabel">Name</label>
+                          <input id="name" type="text" name="name" placeholder="Enter your name...">
+                        <label for="email" class="emailLabel">Email</label>
+                          <input id="email" type="text" name="email" placeholder="Enter your email...">
+                        <label for="subject">Subject</label>
+                          <input id="subject" type="text" name="subject" placeholder="Your subject...">
+                        <label for="message" class="messageLabel">Message</label>
+                          <textarea id="message" name="message" placeholder="Your message..."></textarea>
+                        <button type="submit">Send</button>
+						-->
+
+
+						{% csrf_token %}
+						{% if form %}
+							{{ form }}
+							<button type="submit">Send</button>
+						{% else %}
+							<p><span class="violet">Thanks for contacting us!</span> We will get back to you very soon.</p>
+						{% endif %}
+
+                    </form>
+                </div>
+                <div class="contact-address span5">
+                    
+                    <h4>Address</h4>
+                    <p>1 Ved Mandir Drive <br> Milltown, NJ, 08850</p>
+                    
+                    <h4>We Are Here</h4>
+                    <p>1. Travel on NJ Turnpike to Exit 9(New  Brunwsick & Route 18). <br>
+2. Take Route 18 North for 1 mile to Route 1 South. Travel 2.5  miles on 
+   Route 1 South. After Technology Center, take Milltown Exit which is 
+   after overpass.<br>
+3. Travel on Milltown Road (also known as Main Street) for about  1 mile. 
+   Go through the 1st traffic light and make 1st right on  Riva Avenue.<br>
+4. Travel on Riva Avenue for 0.7 mile. Go over a small bridge, pass a 
+   Farm Market on left side and then slow down. Just before the Food Mart
+   Store right, make a right turn on Ved Mandir drive.
+</p>
+                </div>
+            </div>
+        </div>
 {% endblock %}
 

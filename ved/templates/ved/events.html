@@ -41,10 +41,10 @@
 				{% for event in events %}
 					<div class="team-text span4 ">
 						<br>
-						<iframe src="/ved/date/{{ event.event_start  | date:'m' }}/{{ event.event_start  | date:'d' }}" height="140px" width="90px" scrolling="no" frameborder="no" alt=""></iframe>                    
+						<iframe src="/ved/date/{{ event.event_date  | date:'m' }}/{{ event.event_date  | date:'d' }}" height="140px" width="90px" scrolling="no" frameborder="no" alt=""></iframe>                    
 						<h4><b>{{ event.description }}</b></h4>
-						<p>{{ event.description1 | default_if_none:"&nbsp;" }}</p>
-						<p>{{ event.description2 | default_if_none:"&nbsp;" }}</p>
+						<p>{{ event.description1|default:"&nbsp;" }}</p>
+						<p>{{ event.description2|default:"&nbsp;" }}</p>
 						<div class="social-links">
 							<a class="facebook" href="https://www.facebook.com/VedMandirNJ"></a>
 							<a class="email" href="mailto:username@example.com?subject=Event&body=message%20goes%20here"></a>

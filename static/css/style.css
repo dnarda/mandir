@@ -1140,4 +1140,21 @@ ul.portfolio-img li {
 
 }
 
+ul.errorlist {
+	color: red;
+}
 
+#id_priest_service_requested {
+	margin-left: 5px;
+	width: 15px;
+	height: 13px;
+	vertical-align: top;
+}
+
+label[for=id_priest_service_requested]{
+	display:inline;
+}
+
+#id_booking_time {
+	display:block;
+}

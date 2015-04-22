@@ -100,7 +100,7 @@ jQuery(document).ready(function() {
     Contact form
 */
 jQuery(document).ready(function() {
-    $('.contact-form form').submit(function() {
+    $('.contact-form1 form1').submit(function() {
 
         $('.contact-form form .nameLabel').html('Name');
         $('.contact-form form .emailLabel').html('Email');
