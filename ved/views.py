@@ -30,7 +30,7 @@ def datedisp(request,pmonth,pday):
 def events(request, pmonth = None, pyear = None):
     today_date = datetime.now()
     from_date = date(today_date.year,today_date.month,1)
-    to_date = from_date + relativedelta(months=2)
+    to_date = from_date + relativedelta(months=3)
     
     events = Event.objects.filter(Q(event_date__gte = from_date),Q(event_date__lt = to_date)).order_by('event_date')
 
@@ -68,6 +68,28 @@ def priest(request):
 
         if form.is_valid():
             form.save()
+
+            priestrequest = form.instance
+
+            mandir_staff = getattr(settings, "MANDIR_STAFF", None)
+
+            ## Send Thank you email
+            message = "Dear " + priestrequest.name + "\n"
+            message += "Thank you for your message. We will get back to you soon!"
+            send_mail("Thank you from Ved Mandir!", message, 'no-reply@vedmandir.org', [priestrequest.email])
+
+            ## Notify Ved mandir staff
+            message = "New Priest service request received from: " + priestrequest.name + "\n"
+            message += "Email: " + priestrequest.email + "\n"
+            message += "Phone: " + priestrequest.phone + "\n"
+            message += "Pooja date: " + priestrequest.pooja_date + "\n"
+            message += "Pooja time: " + priestrequest.pooja_time + "\n"
+            message += "Pooja type: " + priestrequest.pooja_type + "\n"
+            message += "Pooja location: " + priestrequest.pooja_location + "\n"
+            message += "Comments: " + priestrequest.comments + "\n"
+            message += "-----------------------------------------------------\n"
+            send_mail("New Priest Service Request", message, 'no-reply@vedmandir.org', mandir_staff)
+
             return render(request, 'ved/priest.html', {} )
         else:
             return render(request, 'ved/priest.html', {'form':form} )
@@ -82,6 +104,27 @@ def hall(request):
 
         if form.is_valid():
             form.save()
+
+            hallbooking = form.instance
+
+            mandir_staff = getattr(settings, "MANDIR_STAFF", None)
+
+            ## Send Thank you email
+            message = "Dear " + hallbooking.name + "\n"
+            message += "Thank you for your message. We will get back to you soon!"
+            send_mail("Thank you from Ved Mandir!", message, 'no-reply@vedmandir.org', [hallbooking.email])
+
+            ## Notify Ved mandir staff
+            message = "New Hall booking request received from: " + hallbooking.name + "\n"
+            message += "Email: " + hallbooking.email + "\n"
+            message += "Phone: " + hallbooking.phone + "\n"
+            message += "Booking date: " + hallbooking.booking_date + "\n"
+            message += "Booking time: " + hallbooking.booking_time + "\n"
+            message += "Priest service requested: " + "YES" if hallbooking.priest_service_request else "NO" + "\n"
+            message += "Comments: " + hallbooking.comments + "\n"
+            message += "-----------------------------------------------------\n"
+            send_mail("New Hall Booking Request", message, 'no-reply@vedmandir.org', mandir_staff)
+
             return render(request, 'ved/hall.html', {} )
         else:
             return render(request, 'ved/hall.html', {'form':form} )
@@ -106,8 +149,7 @@ def contact(request):
             send_mail("Thank you from Ved Mandir!", message, 'no-reply@vedmandir.org', [contact.email])
 
             ## Notify Ved mandir staff
-            message = "New Contact message received from " + contact.name + "\n"
-            message += "-----------------------------------------------------\n"
+            message = "New Contact message received from: " + contact.name + "\n"
             message += "Subject: " + contact.subject + "\n"
             message += "Message: \n"
             message += contact.message  + "\n"
@@ -125,8 +167,9 @@ def contact(request):
 def avail(request):
     return render(request, 'ved/avail.html', {})
 
-def donation(request):
-    with open('static/donation.pdf', 'r') as pdf:
+def showpdf(request,filename):
+    filename = 'static/' + filename + ".pdf"
+    with open(filename, 'r') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')
         response['Content-Disposition'] = 'inline;filename=some_file.pdf'
         return response
