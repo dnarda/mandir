@@ -43,7 +43,11 @@
 						<br>
 						<iframe src="/ved/date/{{ event.event_date  | date:'m' }}/{{ event.event_date  | date:'d' }}" height="140px" width="90px" scrolling="no" frameborder="no" alt=""></iframe>                    
 						<h4><b>{{ event.description }}</b></h4>
-						<p>{{ event.description1|default:"&nbsp;" }}</p>
+						{% if event.description1_link %}
+							<p><a href="/ved/pdf/{{ event.description1 }}">Click for more detail</a></p>
+						{% else %}
+							<p>{{ event.description1|default:"&nbsp;" }}</p>
+						{% endif %}
 						<p>{{ event.description2|default:"&nbsp;" }}</p>
 						<div class="social-links">
 							<a class="facebook" href="https://www.facebook.com/VedMandirNJ"></a>
@@ -61,7 +65,7 @@
 						<p>Need more <span class="violet">information? </span> Want to learn more about what's happening? </p>
 					</div>
 					<div class="ca-button">
-						<a href="contact.html">Contact Us!</a>
+						<a href="/ved/contact">Contact Us!</a>
 					</div>
 				</div>
 			</div>

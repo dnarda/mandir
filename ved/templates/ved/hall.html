@@ -26,19 +26,6 @@
                 <div class="contact-form span7">
                     <form method="post" action="/ved/hall/">
 
-						<!--
-                        <label for="name" class="nameLabel">Name</label>
-                          <input id="name" type="text" name="name" placeholder="Enter your name...">
-                        <label for="email" class="emailLabel">Email</label>
-                          <input id="email" type="text" name="email" placeholder="Enter your email...">
-                        <label for="subject">Subject</label>
-                          <input id="subject" type="text" name="subject" placeholder="Your subject...">
-                        <label for="message" class="messageLabel">Message</label>
-                          <textarea id="message" name="message" placeholder="Your message..."></textarea>
-                        <button type="submit">Send</button>
-						-->
-
-
 						{% csrf_token %}
 						{% if form %}
 							{{ form }}

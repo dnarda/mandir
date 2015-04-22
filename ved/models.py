@@ -5,7 +5,9 @@ from django.db import models
 class Event(models.Model):
     description = models.CharField(max_length=200)
     description1 = models.CharField(max_length=200,  blank = True)
+    description1_link = models.BooleanField(default = False)
     description2 = models.CharField(max_length=200,  blank = True)
+    description2_link = models.BooleanField(default = False)
     event_date = models.DateField('event start')
 
 class YearlyEvent(models.Model):
