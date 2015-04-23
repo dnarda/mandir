@@ -10,17 +10,10 @@ from django.conf import settings
 from django.http import HttpResponse
 
 # Create your views here.
+
 def index(request):
     context = {}
     return render(request, 'ved/index.html', context)
-
-def test(request):
-    context = {}
-    return render(request, 'ved/test.html', context)
-
-def t2(request):
-    context = {}
-    return render(request, 'ved/t2.html', context)
 
 def datedisp(request,pmonth,pday):
     context = {}
@@ -120,7 +113,7 @@ def hall(request):
             message += "Phone: " + hallbooking.phone + "\n"
             message += "Booking date: " + hallbooking.booking_date + "\n"
             message += "Booking time: " + hallbooking.booking_time + "\n"
-            message += "Priest service requested: " + "YES" if hallbooking.priest_service_request else "NO" + "\n"
+            message += "Priest service requested: " + ("YES" if hallbooking.priest_service_requested else "NO") + "\n"
             message += "Comments: " + hallbooking.comments + "\n"
             message += "-----------------------------------------------------\n"
             send_mail("New Hall Booking Request", message, 'no-reply@vedmandir.org', mandir_staff)
